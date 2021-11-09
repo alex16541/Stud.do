@@ -205,6 +205,7 @@ body {
   display: -ms-grid;
   display: grid;
   min-width: 200px;
+  width: 200px;
   overflow: auto;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;

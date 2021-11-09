@@ -98,8 +98,6 @@ body{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 1
 
 .login {
 
-    
-
     &__btn{
         padding: 5px 15px;
         border: 2px solid #fff;
@@ -120,10 +118,9 @@ body{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 1
     grid-area: 'sidebar';
     display: grid;
 
-
-
     
     min-width: 200px;
+    width: 200px;
     overflow: auto;
 
     border-top-right-radius: 5px;
