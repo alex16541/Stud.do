@@ -1,15 +1,3 @@
-
-// function styleBlue(){
-//     let sidebarItems = document.querySelectorAll('.sidebar__item');
-//     for (let i = 0; i < sidebarItems.length; i++) {
-//         const item = sidebar_Items[i];
-//         item.style.backgroundColor = "#555";
-        
-//     }
-// }
-// styleBlue();
-
-// document.addEventListener("load", function() {
 let sid = document.querySelector('.sidebar');
 let content = document.querySelector('.content');
 let r = document.querySelector('.resize');
@@ -20,13 +8,20 @@ let unlock = false;
 document.addEventListener('mousemove', function(e) {
   let change = curr_width + (e.clientX - curr_width);
   if (unlock) {
-    if (change > 199) {
+    if (change > 99) {
       
       sid.style.width = change+'px';
 
       console.log(sid.style.width);
-    } else {
-        sid.style.width = '200px';
+    }
+    else if (change == 0) {
+      
+      sid.style.width = 0+'px';
+
+      console.log(sid.style.width);
+    }
+    else {
+        sid.style.width = '100px';
 
         console.log("else "+change);
     }
@@ -48,4 +43,46 @@ document.addEventListener('mousedown', function(e) {
   }
 });
 
+/* Swiper */
+
+const contentSwiper = new Swiper('.timetable-swiper', {
+  // Optional parameters
+  direction: 'horizontal',
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 3,
   
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  grabCursor: true,
+  mousewheel: true,
+
+});
+
+const sidebarSwiper = new Swiper('.sidebar-swiper', {
+  // Optional parameters
+  direction: 'vertical',
+  loop: false,
+  speed: 200,
+  slidesPerView: 10,
+  slidesPerGroup: 2,
+
+  // And if we need scrollbar
+  // freeMode:true,
+  grabCursor: true,
+  mousewheel: true,
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,
+  },
+});

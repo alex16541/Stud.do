@@ -1,3 +1,5 @@
+@charset "UTF-8";
+@import url("../../fonts/Gilroy/stylesheet.css");
 * {
   padding: 0;
   margin: 0;
@@ -77,19 +79,15 @@ h1, h2, h3, h4, h5, h6 {
 
 html {
   background-color: #333;
-  -ms-overflow-style: none;
-  /* IE 10+ */
-  scrollbar-width: none;
-  /* Firefox */
   max-height: 100vh;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Gilroy";
   font-size: 16;
-  color: #eee;
+  color: #fff;
 }
 
 .wrapper {
@@ -111,6 +109,7 @@ body {
           justify-content: center;
 }
 
+/* ------------------------------------------- */
 .container {
   width: 100%;
   height: 100vh;
@@ -122,6 +121,7 @@ body {
       grid-template-areas: "header" "main" "fotter";
 }
 
+/* ------------------------------------------- */
 .header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -143,6 +143,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding: 10px;
 }
 .header__logo a {
   font-size: 32px;
@@ -166,6 +167,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-weight: 700;
   font-size: 20px;
 }
 .header__login {
@@ -180,15 +182,7 @@ body {
           justify-content: center;
 }
 
-.login__btn {
-  padding: 5px 15px;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  background-color: transparent;
-  font-size: 20px;
-  color: #fff;
-}
-
+/* ------------------------------------------- */
 .main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
@@ -202,46 +196,41 @@ body {
 
 .sidebar {
   grid-area: "sidebar";
-  display: -ms-grid;
-  display: grid;
-  min-width: 200px;
-  width: 200px;
-  overflow: auto;
+  min-width: 0px;
+  width: 100px;
+  max-width: 500px;
+  overflow: hidden;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
-.sidebar::-webkit-scrollbar-thumb {
-  background: #38ACFF;
-}
-.sidebar::-webkit-scrollbar {
-  width: 5px;
-  height: 8px;
-  background-color: transparent;
-}
-.sidebar__list {
-  background-color: #95d3a9;
+.sidebar-swiper {
   width: 100%;
   height: 100%;
+  background-color: #74c5ffaf;
+}
+.sidebar-swiper .swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-.sidebar__item {
   padding: 20px;
   text-transform: uppercase;
   text-overflow: clip;
 }
-.sidebar a {
+.sidebar-swiper .swiper-slide a {
   color: #fff;
 }
 
@@ -249,52 +238,47 @@ body {
   width: 5px;
   background-color: #333;
   height: 100%;
-  cursor: e-resize;
+  cursor: col-resize;
 }
 
 .content {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   background-color: #555;
   border-radius: 5px;
   grid-area: "content";
   max-height: 100%;
-  overflow: auto;
+  overflow: hidden;
+}
+.content__timetable-swiper {
   padding: 20px;
 }
-.content::-webkit-scrollbar-thumb {
-  background: #38ACFF;
-}
-.content::-webkit-scrollbar {
-  width: 5px;
-  height: 8px;
-  background-color: transparent;
-  /* or add it to the track */
-}
-.timetable {
+
+.timetable-swiper {
   height: 100%;
-  display: -ms-grid;
-  display: grid;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  gap: 10px;
-  -ms-grid-columns: 500px 10px 500px 10px 500px 10px 500px 10px 500px 10px 500px 10px 500px;
-  grid-template-columns: 500px 500px 500px 500px 500px 500px 500px;
-  grid-auto-flow: column;
+  width: 100%;
 }
-.timetable__item {
+.timetable-swiper .swiper-slide {
   background-color: #333;
   padding: 20px;
   border-radius: 10px;
   border: 3px #7D7D7D solid;
 }
-.timetable__title {
+.timetable-swiper .swiper-slide__title {
   font-size: 26px;
   padding-bottom: 10px;
 }
-.timetable__text {
+.timetable-swiper .swiper-slide__text {
   font-size: 18px;
 }
 
+.swiper-scrollbar-drag {
+  background-color: #333;
+}
+
+/* ------------------------------------------- */
 .fotter {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -309,4 +293,123 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: #555;
+}
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 10px;
+  padding: 5px 15px;
+  border: 2px solid #fff;
+  background-color: #333;
+  font-size: 20px;
+  color: #fff;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.btn_w {
+  color: #333;
+  background-color: #fff;
+}
+.btn_w:hover {
+  background-color: #333;
+  color: #fff;
+}
+.btn:focus {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.btn:active {
+  -webkit-box-shadow: 0 0 0 0.2rem #ffffff;
+          box-shadow: 0 0 0 0.2rem #ffffff;
+}
+.btn:hover {
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+  border-color: #333;
+  background-color: #fff;
+  color: #333;
+}
+
+.custom_checkbox {
+  /* стили при наведении курсора на checkbox */
+  /* стили для активного состояния чекбокса (при нажатии на него) */
+  /* стили для чекбокса, находящегося в фокусе */
+  /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+  /* стили для чекбокса, находящегося в состоянии disabled */
+}
+.custom_checkbox > input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.custom_checkbox > span {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.custom_checkbox > span::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.custom_checkbox > input:checked + span::before {
+  background-color: black;
+  border-color: black;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+.custom_checkbox > input:not(:disabled):not(:checked) + span:hover::before {
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+  background-color: #000;
+  border-color: black;
+}
+.custom_checkbox > input:not(:disabled) + span:active::before {
+  background-color: #d4d4d4;
+  border-color: #d4d4d4;
+}
+.custom_checkbox > input + span:hover::before {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(156, 156, 156, 0.25);
+          box-shadow: 0 0 0 0.2rem rgba(156, 156, 156, 0.25);
+}
+.custom_checkbox > input:focus:not(:checked) + span::before {
+  border-color: #5c5c5c;
+}
+.custom_checkbox > input:disabled + span::before {
+  background-color: #e7e7e7;
+}
+
+.msg-box {
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 700;
+  border-bottom: 1px solid #000;
+  padding: 20px 0;
+}
+.msg-box::-webkit-input-placeholder {
+  color: #000;
+}
+.msg-box:-moz-placeholder {
+  color: #000;
 }

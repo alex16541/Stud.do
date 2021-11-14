@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <!--/Swiper -->
     <link rel="shortcut icon" href="img/logo-icon-w-lg.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
     <title>Stud.do</title>
@@ -18,73 +20,90 @@
                 <div class="header__logo"><a href="#"><img src="img/logo-w-lg.png" alt="Stud.do"></a></div>
                 <div class="header__status">Page&nbsp;status</div>
                 <div class="header__login login">
-                    <button class="login__btn">login</button>
+                    <button class="login__btn btn">login</button>
                 </div>
             </header>
             <div class="main">
-                <aside class="sidebar">
-                    <div class="sidebar__list">
-                        <div class="sidebar__item"><a href="#">title</a></div>
-                        <div class="sidebar__item"><a href="#">title</a></div>
-                        <div class="sidebar__item"><a href="#">title</a></div>
-                        <div class="sidebar__item"><a href="#">title</a></div>
-                        <div class="sidebar__item"><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla rem eligendi, quia perferendis aut dicta aperiam quod voluptatum! Corrupti ab facilis obcaecati adipisci cupiditate maiores tempore quasi, tempora sint odit ea autem laboriosam assumenda sit hic! Soluta temporibus nostrum quos earum, fugiat, suscipit vitae similique assumenda fuga eveniet molestiae quas laborum expedita consectetur atque quam? Accusamus ea necessitatibus debitis ipsum suscipit provident atque porro magni error ratione, consequatur aliquam maiores dicta voluptate velit eius iste rem in? Nobis minima consequatur possimus quam, consequuntur sapiente exercitationem ex numquam, neque, a mollitia iusto odit adipisci rem odio molestiae recusandae reiciendis sit porro. Nisi aperiam cum hic, quod error exercitationem delectus atque nemo aut vero quae quos porro aliquid pariatur placeat, doloremque eveniet itaque impedit. Eos alias vitae ab neque sint aliquid rerum, vel illum doloribus voluptas ipsum debitis voluptatum officia non nisi? Asperiores quia voluptate ullam error dolorum facilis, aut quam, animi eius sit molestiae nobis necessitatibus accusamus temporibus ex at corporis rem ipsa, eos illo eveniet quasi? Nesciunt aut laudantium soluta provident magni? Odit nesciunt porro ipsum doloremque debitis molestias et praesentium expedita magnam, nisi numquam quae, impedit veniam cum delectus quidem nam vero. Eum voluptate quam, autem possimus quibusdam voluptatibus.</a></div>
+                <div class="sidebar">
+                    <div class="sidebar-swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                            <div class="swiper-slide sidebar__item"><a href="#">link</a></div>
+                        </div>
+                        <div class="swiper-scrollbar"></div>
                     </div>
-                </aside>
+                </div>
                 <div class="resize"></div>
                 <div class="content">
-                    <div class="content__timetable timetable">
-                        <section class="timetable__item">
-                            <h2 class="timetable__title">Понедельник</h2>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                                reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                        </section>
-                        <section class="timetable__item">
-                            <h2 class="timetable__title">Вторник</h2>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                                reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                        </section>
-                        <section class="timetable__item">
-                            <h2 class="timetable__title">Среда</h2>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                                reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                        </section>
-                        <section class="timetable__item">
-                            <h2 class="timetable__title">Четверг</h2>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                                reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                                reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                        </section>
-                        <section class="timetable__item">
-                            <h2 class="timetable__title">Пятница</h2>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                                reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                        </section>
-                        <section class="timetable__item">
-                            <h2 class="timetable__title">Суббота</h2>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                                reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                            reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                            reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                            reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                            reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                            <p class="timetable__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
-                                reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
-                        </section>
+                    <div class="content__timetable-swiper timetable-swiper swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <h2 class="swiper-slide__title">Понедельник</h2>
+                                <p class="swiper-slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
+                                    reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <h2 class="swiper-slide__title">Вторник</h2>
+                                <p class="swiper-slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
+                                    reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <h2 class="swiper-slide__title">Среда</h2>
+                                <p class="swiper-slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
+                                    reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <h2 class="swiper-slide__title">Четверг</h2>
+                                <p class="swiper-slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
+                                    reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
+                                <p class="swiper-slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
+                                    reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <h2 class="swiper-slide__title">Пятница</h2>
+                                <p class="swiper-slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
+                                    reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <h2 class="swiper-slide__title">Суббота</h2>
+                                <p class="swiper-slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
+                                    reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <h2 class="swiper-slide__title">Воскресенье</h2>
+                                <p class="swiper-slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea officiis
+                                    reiciendis in a, cumque totam provident laborum fugit magni hic?</p>
+                            </div>
+                        </div>                       
                     </div>
                 </div>
             </div>
             <fotter class="fotter">
                 <div class="fotter__copy">&copy;&nbsp;Stud.do&nbsp;2021</div>
-                <div class="fotter__text">Lorem ipsum dolor sit amet.</div>
+                <div class="fotter__text">Not what, but how.</div>
             </fotter>
         </div>
     </div>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

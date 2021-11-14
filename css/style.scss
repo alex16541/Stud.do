@@ -1,3 +1,42 @@
+//<МИКСИНЫ>==========================================================================
+@mixin anim($time,$delay) {-webkit-transition: all $time ease $delay;-moz-transition: all $time ease $delay;-ms-transition: all $time ease $delay;-o-transition: all $time ease $delay;transition: all $time ease $delay;}
+@mixin cnt($h) {display: flex;flex-direction: column; height: $h; text-align: center; align-items: stretch; justify-content: center;}
+@mixin tr($x,$y,$z) {transform: translate3d($x,$y,$z);}
+@mixin flexbox() {display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;font-size:0;}
+@mixin flexboxinline() {display:-moz-inline-flex; display:-ms-inline-flex;  display:-o-inline-flex; display:-inline-flex;display: -webkit-inline-flex;}
+@mixin flexorder($val) {-webkit-box-ordinal-group: $val; -moz-box-ordinal-group: $val; -ms-flex-order: $val; -webkit-order: $val; order: $val;}
+//</МИКСИНЫ>==========================================================================
+
+//<ШРИФТЫ>==========================================================================
+
+@import url("../../fonts/Gilroy/stylesheet.css");
+
+//<Подключаемые шрифты>==========================================================================
+
+//</Подключаемые шрифты>==========================================================================
+
+
+//<Шрифт по умолчанию>==========================================================================
+$fontfamily:"Gilroy";
+$fontcolor:#fff;
+$accentColor: #38ACFF;
+$backgroundColor: #333;
+$sidebarColor:#74c5ffaf;
+$coolColor: #95d3a9;
+//</Шрифт по умолчанию>==========================================================================
+
+//</ШРИФТЫ>==========================================================================
+
+//<ПЕРЕМЕННЫЕ>==========================================================================
+$minwidth:320px;
+$mw:1420;
+$md1:$mw+12;
+$md2:992.98;
+$md3:767.98;
+$md4:479.98;
+//</ПЕРЕМЕННЫЕ>==========================================================================
+
+
 *{padding: 0;margin: 0;border: 0;}
 *,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
 :focus,:active{outline: none;}
@@ -20,11 +59,13 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 
 html{
     background-color: #333;
-    -ms-overflow-style: none;  /* IE 10+ */
-    scrollbar-width: none; /* Firefox */
+    // -ms-overflow-style: none;  /* IE 10+ */
+    // scrollbar-width: none; /* Firefox */
     max-height: 100vh;
 }
-body{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 16; color: #eee;}
+body{margin: 0;padding: 0;font-family: $fontfamily;font-size: 16; color: $fontcolor;}
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>==========================================================================
 
 .wrapper {
     min-height: 100vh;
@@ -36,6 +77,8 @@ body{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 1
     justify-content: center;
 }
 
+/* ------------------------------------------- */
+
 .container {
     width: 100%;
     height: 100vh;
@@ -45,6 +88,8 @@ body{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 1
     grid-template-areas: "header" "main" "fotter";
     
 }
+
+/* ------------------------------------------- */
 
 .header {
     grid-area: header;
@@ -58,6 +103,7 @@ body{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 1
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 10px;
             
             & a{
                 font-size: 32px;
@@ -79,7 +125,7 @@ body{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 1
             display: flex;
             align-items: center;
             justify-content: center;
-            
+            font-weight: 700;
             font-size: 20px;
 
         }
@@ -90,23 +136,17 @@ body{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 1
             display: flex;
             align-items: center;
             justify-content: center;
-            
-            
-
         }
 }
 
 .login {
 
     &__btn{
-        padding: 5px 15px;
-        border: 2px solid #fff;
-        border-radius: 5px;
-        background-color: transparent;
-        font-size: 20px;
-        color: #fff;
+        
     }
 }
+
+/* ------------------------------------------- */
 
 .main {
     grid-area: main;
@@ -116,122 +156,98 @@ body{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 1
 }
 .sidebar {
     grid-area: 'sidebar';
-    display: grid;
-
-    
-    min-width: 200px;
-    width: 200px;
-    overflow: auto;
+    min-width: 0px;
+    width: 100px;
+    max-width: 500px;
+    overflow: hidden;
 
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    user-select: none;
 
+    &-swiper{
+        width: 100%;
+        height: 100%;
+        background-color: $sidebarColor;
 
-        &::-webkit-scrollbar-thumb {
-            background: #38ACFF;
-        }
-        &::-webkit-scrollbar {
-            
-            width: 5px;
-            height: 8px;
-            background-color: transparent; 
-        }
-
-        // .sidebar__list
-
-        &__list{
-            background-color: #95d3a9;
-            width: 100%;
-            height: 100%;
+        & .swiper-slide{
             display: flex;
             align-items: center;
-            justify-content: start;
+            justify-content: center;
             flex-direction: column;
-            
-        }
-
-        // .sidebar__item
-
-        &__item{
             padding: 20px;
             text-transform: uppercase;
             text-overflow: clip;
+            & a{
+                color: #fff;
+            }
         }
+    }
 
-        // .sidebar__resize
-
-        & a{
-            color: #fff;
-        }
         
 }
+
 .resize{
     width: 5px;
     background-color: #333;
     height: 100%;
 
-    cursor: e-resize;
+    cursor: col-resize;
 }
+
 .content {
+    user-select: none;
     background-color: #555;
     border-radius: 5px;
     grid-area: 'content';
     max-height: 100%;
-    overflow: auto;
+    overflow: hidden;
     
 
-    &::-webkit-scrollbar-thumb {
-        background: #38ACFF;
-    }
-    &::-webkit-scrollbar {
-        width: 5px;
-        height: 8px;
-        background-color: transparent; /* or add it to the track */
-    }
-    
 
-    padding: 20px;
-
-    &__timetable{
-        
+    &__timetable-swiper{
+        padding: 20px;
     }
 }
-.timetable{
-    height: 100%;
-        display: grid;
-        justify-content: start;
-        gap: 10px;
-        grid-template-columns: 500px 500px 500px 500px 500px 500px 500px;
-        grid-auto-flow: column;
-        
-
-
+.timetable-swiper{
+        height: 100%;
+        width: 100%;
         // .timetable__item
 
-        &__item {
+        & .swiper-slide {
             //background-color: #95d3d050;
             background-color:#333;
             padding: 20px;
             border-radius: 10px;
             border: 3px #7D7D7D solid;
 
+            // .timetable__title
+    
+            &__title {
+                font-size: 26px;
+                padding-bottom: 10px;
+            }
+    
+            // .timetable__text
+    
+            &__text {
+                font-size: 18px;
+            }
         }
 
-		// .timetable__title
-
-		&__title {
-            font-size: 26px;
-            padding-bottom: 10px;
-		}
-
-		// .timetable__text
-
-		&__text {
-            font-size: 18px;
-		}
 
        
 }
+
+.swiper-scrollbar{
+
+    &-drag{
+        background-color: $backgroundColor;
+    }
+}
+
+/* ------------------------------------------- */
+
 .fotter {
     grid-area: fotter;
     background-color: #333;
@@ -243,6 +259,7 @@ body{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 1
 		// .fotter__copy
 
 		&__copy {
+            // color: red;
 		}
 
 		// .fotter__text
@@ -250,3 +267,5 @@ body{margin: 0;padding: 0;font-family: Arial, Helvetica, sans-serif;font-size: 1
 		&__text {
 		}
 }
+
+@import 'forms.scss';
