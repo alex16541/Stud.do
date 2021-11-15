@@ -1,0 +1,34 @@
+.sidebar {
+    max-width: 500px;
+    min-width: 0px;
+    width: 100px;
+
+    overflow: hidden;
+
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    user-select: none;
+
+    &-swiper{
+        width: 100%;
+        height: 100%;
+
+        background-color: $sidebarColor;
+
+        & .swiper-slide{
+            padding: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            text-transform: uppercase;
+            text-overflow: clip;
+            
+            & a{
+                color: #fff;
+            }
+        }
+    }   
+}

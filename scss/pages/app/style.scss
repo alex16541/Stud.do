@@ -7,9 +7,13 @@
 @mixin flexorder($val) {-webkit-box-ordinal-group: $val; -moz-box-ordinal-group: $val; -ms-flex-order: $val; -webkit-order: $val; order: $val;}
 //</МИКСИНЫ>==========================================================================
 
+//<ЦВЕТА>==========================================================================
+@import '../../styles/colorStyle.scss';
+//</ЦВЕТА>==========================================================================
+
 //<ШРИФТЫ>==========================================================================
 
-@import url("../../fonts/Gilroy/stylesheet.css");
+@import url("../../../fonts/Gilroy/stylesheet.css");
 
 //<Подключаемые шрифты>==========================================================================
 
@@ -19,13 +23,10 @@
 //<Шрифт по умолчанию>==========================================================================
 $fontfamily:"Gilroy";
 $fontcolor:#fff;
-$accentColor: #38ACFF;
-$backgroundColor: #333;
-$sidebarColor:#74c5ffaf;
-$coolColor: #95d3a9;
 //</Шрифт по умолчанию>==========================================================================
 
 //</ШРИФТЫ>==========================================================================
+
 
 //<ПЕРЕМЕННЫЕ>==========================================================================
 $minwidth:320px;
@@ -36,26 +37,11 @@ $md3:767.98;
 $md4:479.98;
 //</ПЕРЕМЕННЫЕ>==========================================================================
 
+//<ОБНУЛЕНИЕ СТИЛЕЙ>==========================================================================
+@import '../../styles/nullableStyle.scss';
+//</ОБНУЛЕНИЕ СТИЛЕЙ>==========================================================================
 
-*{padding: 0;margin: 0;border: 0;}
-*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
-:focus,:active{outline: none;}
-a:focus,a:active{outline: none;}
-nav,footer,header,aside{display: block;}
-html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
-input,button,textarea{font-family:inherit;}
-input::-ms-clear{display: none;}
-button{cursor: pointer;}
-button::-moz-focus-inner{padding:0;border:0;}
-a,a:visited{text-decoration: none;}
-a:hover{text-decoration: none;}
-ul li{list-style: none;}
-img{vertical-align: top;}
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
-
-*{box-sizing: border-box;}
-
-
+//<СТИЛИ ДОКУМЕНТА>==========================================================================
 
 html{
     background-color: #333;
@@ -65,12 +51,19 @@ html{
 }
 body{margin: 0;padding: 0;font-family: $fontfamily;font-size: 16; color: $fontcolor;}
 
+//</СТИЛИ ДОКУМЕНТА>==========================================================================
+
+//<ПОДКЛЮЧАЕМЫЕ СТИЛИ>===========================================================================
+@import '../../styles/swiperStyle.scss';
+//</ПОДКЛЮЧАЕМЫЕ СТИЛИ>==========================================================================
+
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>==========================================================================
 
 .wrapper {
     min-height: 100vh;
-    max-height: 100%;
+    max-height: 100vh;
     width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,9 +73,10 @@ body{margin: 0;padding: 0;font-family: $fontfamily;font-size: 16; color: $fontco
 /* ------------------------------------------- */
 
 .container {
-    width: 100%;
+    min-height: 100vh;
     height: 100vh;
-    max-height:100vh;
+    width: 100%;
+
     display: grid;
     grid-template: minmax(auto, 50px) minmax(600px, 100vh) minmax(auto, 20px)/ minmax(768px, 1fr) ;
     grid-template-areas: "header" "main" "fotter";
@@ -153,98 +147,64 @@ body{margin: 0;padding: 0;font-family: $fontfamily;font-size: 16; color: $fontco
     display: grid;
     grid-template: 1fr / minmax(auto, auto) 5px 1fr;
 
-}
-.sidebar {
-    grid-area: 'sidebar';
-    min-width: 0px;
-    width: 100px;
-    max-width: 500px;
-    overflow: hidden;
-
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    user-select: none;
-
-    &-swiper{
-        width: 100%;
-        height: 100%;
-        background-color: $sidebarColor;
-
-        & .swiper-slide{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            padding: 20px;
-            text-transform: uppercase;
-            text-overflow: clip;
-            & a{
-                color: #fff;
+    @import '../../moduls/sidebar.scss';
+    
+    .sidebar {
+        grid-area: 'sidebar';
+    
+        &-swiper{
+    
+            & .swiper-slide{
+    
+                & a{
+                    
+                }
             }
+        }   
+    }
+    
+    @import '../../moduls/resizebar.scss';
+    
+    .resizebar{
+        
+    }
+    
+    .content {
+        user-select: none;
+        background-color: #555;
+        border-radius: 5px;
+        grid-area: 'content';
+        max-height: 100%;
+        overflow: hidden;
+        
+        &__timetable-swiper{
+            padding: 20px;
         }
     }
-
-        
-}
-
-.resize{
-    width: 5px;
-    background-color: #333;
-    height: 100%;
-
-    cursor: col-resize;
-}
-
-.content {
-    user-select: none;
-    background-color: #555;
-    border-radius: 5px;
-    grid-area: 'content';
-    max-height: 100%;
-    overflow: hidden;
     
-
-
-    &__timetable-swiper{
-        padding: 20px;
-    }
-}
-.timetable-swiper{
-        height: 100%;
-        width: 100%;
+    @import '../../routes/timetable/timetable.scss';
+    
+    .timetable-swiper{
+    
         // .timetable__item
-
+    
         & .swiper-slide {
-            //background-color: #95d3d050;
-            background-color:#333;
-            padding: 20px;
-            border-radius: 10px;
-            border: 3px #7D7D7D solid;
-
-            // .timetable__title
+    
     
             &__title {
-                font-size: 26px;
-                padding-bottom: 10px;
-            }
     
-            // .timetable__text
+            }
     
             &__text {
-                font-size: 18px;
+    
             }
-        }
-
-
-       
-}
-
-.swiper-scrollbar{
-
-    &-drag{
-        background-color: $backgroundColor;
+        }     
     }
 }
+
+
+
+
 
 /* ------------------------------------------- */
 
@@ -268,4 +228,5 @@ body{margin: 0;padding: 0;font-family: $fontfamily;font-size: 16; color: $fontco
 		}
 }
 
-@import 'forms.scss';
+@import '../../moduls/forms.scss';
+
