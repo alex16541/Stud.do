@@ -5,7 +5,7 @@ const contentSwiper = new Swiper('.timetable-swiper', {
     direction: 'horizontal',
     loop: true,
     spaceBetween: 30,
-    slidesPerView: 3,
+    slidesPerView: 1,
     
     // If we need pagination
     pagination: {
@@ -21,7 +21,14 @@ const contentSwiper = new Swiper('.timetable-swiper', {
     // And if we need scrollbar
     grabCursor: true,
     mousewheel: true,
-  
+    breakpoints:{
+      767.98: {
+        slidesPerView: 2,
+      },
+      1420:{
+        slidesPerView: 3,
+      },
+    },
   });
   
   const sidebarSwiper = new Swiper('.sidebar-swiper', {
@@ -40,4 +47,5 @@ const contentSwiper = new Swiper('.timetable-swiper', {
       el: '.swiper-scrollbar',
       draggable: true,
     },
+    
   });

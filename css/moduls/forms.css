@@ -21,15 +21,15 @@
   background-color: #333;
   color: #fff;
 }
-.btn:focus {
+.btn_w:focus {
   border-color: #ffffff;
   color: #ffffff;
 }
-.btn:active {
+.btn_w:active {
   -webkit-box-shadow: 0 0 0 0.2rem #ffffff;
           box-shadow: 0 0 0 0.2rem #ffffff;
 }
-.btn:hover {
+.btn_w:hover {
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
   -webkit-transition: color 0.3s;
@@ -37,6 +37,20 @@
   border-color: #333;
   background-color: #fff;
   color: #333;
+}
+.btn_icon {
+  border: none;
+  padding: 5;
+  margin: 0;
+}
+.btn_icon:focus path {
+  fill: #adadad;
+}
+.btn_icon:active path {
+  fill: #adadad;
+}
+.btn_icon:hover path {
+  fill: #adadad;
 }
 
 .custom_checkbox {

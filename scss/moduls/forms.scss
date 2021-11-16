@@ -29,22 +29,43 @@ $accentShadow: #ffffff;
             background-color: $secondaryColor;
             color: $mainColor;
         }
+        &:focus{
+            border-color: $accentShadow;
+            color: $accentShadow;
+        }
+        &:active{
+            box-shadow: 0 0 0 0.2rem $accentShadow;
+        }
+        &:hover{
+            transition: background-color 0.3s;
+            transition: color 0.3s;
+            border-color: $secondaryColor;
+            background-color: $mainColor;
+            color: $secondaryColor;
+    
+        }
     }
-    &:focus{
-        border-color: $accentShadow;
-        color: $accentShadow;
+    &_icon{
+        border: none;
+        padding: 5;
+        margin: 0;
+        &:focus{
+            & path{
+                fill: rgb(173, 173, 173);
+            }
+        }
+        &:active{
+            & path{
+                fill: rgb(173, 173, 173);
+            }
+        }
+        &:hover{
+            & path{
+                fill: rgb(173, 173, 173);
+            }
+        }
     }
-    &:active{
-        box-shadow: 0 0 0 0.2rem $accentShadow;
-    }
-    &:hover{
-        transition: background-color 0.3s;
-        transition: color 0.3s;
-        border-color: $secondaryColor;
-        background-color: $mainColor;
-        color: $secondaryColor;
 
-    }
 }
 .custom_checkbox{
     
