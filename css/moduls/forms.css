@@ -13,23 +13,19 @@
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
 }
-.btn_w {
-  color: #333;
-  background-color: #fff;
-}
-.btn_w:hover {
+.btn_text:hover {
   background-color: #333;
   color: #fff;
 }
-.btn_w:focus {
+.btn_text:focus {
   border-color: #ffffff;
   color: #ffffff;
 }
-.btn_w:active {
+.btn_text:active {
   -webkit-box-shadow: 0 0 0 0.2rem #ffffff;
           box-shadow: 0 0 0 0.2rem #ffffff;
 }
-.btn_w:hover {
+.btn_text:hover {
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
   -webkit-transition: color 0.3s;

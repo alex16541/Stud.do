@@ -22,9 +22,7 @@ $accentShadow: #ffffff;
     transition: background-color 0.3s;
     transition: color 0.3s;
 
-    &_w{
-        color: $secondaryColor;
-        background-color: $mainColor;
+    &_text{
         &:hover{
             background-color: $secondaryColor;
             color: $mainColor;
