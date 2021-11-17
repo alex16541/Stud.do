@@ -72,16 +72,14 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
 }
 
-html {
-  background-color: #333;
-}
-
-body {
+body, html {
   margin: 0;
   padding: 0;
   font-family: "Gilroy";
   font-size: 16;
   color: #fff;
+  background-color: #333;
+  height: 100%;
 }
 
 .swiper-scrollbar-drag {
@@ -89,28 +87,38 @@ body {
 }
 
 .wrapper {
-  min-height: 100vh;
-  height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 /* ------------------------------------------- */
 .container {
-  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: minmax(320px, 1fr);
-      grid-template: minmax(auto, 50px) minmax(300px, 100vh) 50px/minmax(320px, 1fr);
+  -ms-grid-columns: minmax(320px, 100%);
+      grid-template: minmax(auto, 50px) minmax(300px, 100%) 50px/minmax(320px, 100%);
       grid-template-areas: "header" "main" "navbar";
 }
 @media (min-width: 767.98px) {
   .container {
-    -ms-grid-columns: minmax(768px, 1fr);
-        grid-template: minmax(auto, 50px) minmax(600px, 100vh) minmax(auto, 20px)/minmax(768px, 1fr);
+    -ms-grid-columns: minmax(768px, 100%);
+        grid-template: minmax(auto, 50px) minmax(600px, 100%) minmax(auto, 20px)/minmax(768px, 100%);
         grid-template-areas: "header" "main" "fotter";
   }
 }
@@ -238,9 +246,9 @@ body {
   grid-area: main;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr;
+  -ms-grid-rows: 100%;
   -ms-grid-columns: minmax(auto, auto) 5px 1fr 5px;
-      grid-template: 1fr/minmax(auto, auto) 5px 1fr 5px;
+      grid-template: 100%/minmax(auto, auto) 5px 1fr 5px;
 }
 .main .sidebar {
   max-width: 500px;
@@ -357,18 +365,11 @@ body {
 .navbar {
   width: 100%;
   height: 50px;
-  z-index: 1;
   background-color: #333;
+  z-index: 1;
   position: sticky;
   bottom: 0;
   left: 0;
-}
-@media (min-width: 767.98px) {
-  .navbar {
-    display: none;
-    position: absolute;
-    pointer-events: none;
-  }
 }
 
 .navbar {
@@ -405,6 +406,13 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+@media (min-width: 767.98px) {
+  .navbar {
+    display: none;
+    position: absolute;
+    pointer-events: none;
+  }
 }
 
 /* ------------------------------------------- */
@@ -445,6 +453,8 @@ body {
   color: #333;
 }
 .btn_icon {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   line-height: 0;
   padding: 10px;
   border: none;
@@ -465,9 +475,6 @@ body {
 }
 .btn_icon:hover path {
   fill: #adadad;
-}
-.btn:focus {
-  border: 1px solid #fff;
 }
 
 .custom_checkbox {

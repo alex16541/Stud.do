@@ -36,6 +36,8 @@
   color: #333;
 }
 .btn_icon {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   line-height: 0;
   padding: 10px;
   border: none;
@@ -56,9 +58,6 @@
 }
 .btn_icon:hover path {
   fill: #adadad;
-}
-.btn:focus {
-  border: 1px solid #fff;
 }
 
 .custom_checkbox {

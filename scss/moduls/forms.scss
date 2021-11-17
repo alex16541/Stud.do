@@ -45,6 +45,7 @@ $accentShadow: #ffffff;
         }
     }
     &_icon{
+        box-sizing: border-box;
         line-height: 0;
         padding: 10px;
         border: none;
@@ -61,7 +62,6 @@ $accentShadow: #ffffff;
                 
             }
         }
-        
         &:active{
             & path{
                 fill: rgb(173, 173, 173);
@@ -72,9 +72,6 @@ $accentShadow: #ffffff;
                 fill: rgb(173, 173, 173);
             }
         }
-    }
-    &:focus{
-        border: 1px solid #fff;
     }
 }
 .custom_checkbox{
