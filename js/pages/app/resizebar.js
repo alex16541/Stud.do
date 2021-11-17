@@ -1,11 +1,11 @@
 let sid = document.querySelector('.sidebar');
 let content = document.querySelector('.content');
-let r = document.querySelector('.resize');
+let r = document.querySelector('.resizebar');
 
 let curr_width = sid.offsetWidth;
 let unlock = false;
 
-document.addEventListener('mousemove', function(e) {
+document.addEventListener('mousemove', (e) => {
   let change = curr_width + (e.clientX - curr_width);
   if (unlock) {
     if (change > 99) {
@@ -14,7 +14,7 @@ document.addEventListener('mousemove', function(e) {
 
       console.log(sid.style.width);
     }
-    else if (change == 0) {
+    else if (change <= 10) {
       
       sid.style.width = 0+'px';
 
@@ -28,16 +28,16 @@ document.addEventListener('mousemove', function(e) {
   }
 });
 
-r.addEventListener('mousedown', function(e) {
+r.addEventListener('mousedown', (e) => {
   curr_width = sid.offsetWidth;
   unlock = true;
 });
-document.addEventListener('mouseup', function(e) {
+document.addEventListener('mouseup', (e) => {
     curr_width = sid.offsetWidth;
     unlock = false;
   });
 
-document.addEventListener('mousedown', function(e) {
+document.addEventListener('mousedown', (e) => {
   if (unlock) {
     e.preventDefault();
   }
