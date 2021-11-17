@@ -11,18 +11,19 @@ $accentShadow: #ffffff;
 //<BUTTONS>==========================================================================
 .btn{
     display: inline-block;
-    border-radius: 5px;
-    padding: 10px;
-    padding: 5px 15px;
-    border: 2px solid $mainColor;
-    background-color: $secondaryColor;
-    font-size: 20px;
-    color: $mainColor;
-
-    transition: background-color 0.3s;
-    transition: color 0.3s;
+    
+    
 
     &_text{
+        border-radius: 5px;
+        padding: 5px 15px;
+        font-size: 20px;
+        border: 2px solid $mainColor;
+        background-color: $secondaryColor;
+        color: $mainColor;
+
+        transition: background-color 0.3s;
+        transition: color 0.3s;
         &:hover{
             background-color: $secondaryColor;
             color: $mainColor;
@@ -44,9 +45,15 @@ $accentShadow: #ffffff;
         }
     }
     &_icon{
+        line-height: 0;
+        padding: 10px;
         border: none;
-        padding: 5;
         margin: 0;
+        background-color: transparent;
+        & svg{
+            min-width: 30px;
+            min-height: 30px;
+        }
         &:focus{
             & path{
                 fill: rgb(173, 173, 173);

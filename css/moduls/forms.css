@@ -1,12 +1,13 @@
 @charset "UTF-8";
 .btn {
   display: inline-block;
+}
+.btn_text {
   border-radius: 5px;
-  padding: 10px;
   padding: 5px 15px;
+  font-size: 20px;
   border: 2px solid #fff;
   background-color: #333;
-  font-size: 20px;
   color: #fff;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
@@ -35,9 +36,15 @@
   color: #333;
 }
 .btn_icon {
+  line-height: 0;
+  padding: 10px;
   border: none;
-  padding: 5;
   margin: 0;
+  background-color: transparent;
+}
+.btn_icon svg {
+  min-width: 30px;
+  min-height: 30px;
 }
 .btn_icon:focus path {
   fill: #adadad;
