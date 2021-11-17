@@ -43,17 +43,22 @@
   background-color: transparent;
 }
 .btn_icon svg {
-  min-width: 30px;
-  min-height: 30px;
+  width: 30px;
+  height: 30px;
 }
-.btn_icon:focus path {
-  fill: #adadad;
+.btn_icon svg path {
+  max-width: 100%;
+  max-height: 100%;
+  fill: white;
 }
 .btn_icon:active path {
   fill: #adadad;
 }
 .btn_icon:hover path {
   fill: #adadad;
+}
+.btn:focus {
+  border: 1px solid #fff;
 }
 
 .custom_checkbox {

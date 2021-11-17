@@ -6,6 +6,7 @@ const contentSwiper = new Swiper('.timetable-swiper', {
     loop: true,
     spaceBetween: 30,
     slidesPerView: 1,
+    loopedSlides: 2,
     
     // If we need pagination
     pagination: {
@@ -24,9 +25,11 @@ const contentSwiper = new Swiper('.timetable-swiper', {
     breakpoints:{
       767.98: {
         slidesPerView: 2,
+        loopedSlides: 3,
       },
       1420:{
         slidesPerView: 3,
+        loopedSlides: 4,
       },
     },
   });

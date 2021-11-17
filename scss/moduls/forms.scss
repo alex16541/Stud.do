@@ -50,15 +50,18 @@ $accentShadow: #ffffff;
         border: none;
         margin: 0;
         background-color: transparent;
+        
         & svg{
-            min-width: 30px;
-            min-height: 30px;
-        }
-        &:focus{
+            width: 30px;
+            height: 30px;
             & path{
-                fill: rgb(173, 173, 173);
+                max-width: 100%;
+                max-height: 100%;
+                fill: rgb(255, 255, 255);
+                
             }
         }
+        
         &:active{
             & path{
                 fill: rgb(173, 173, 173);
@@ -70,7 +73,9 @@ $accentShadow: #ffffff;
             }
         }
     }
-
+    &:focus{
+        border: 1px solid #fff;
+    }
 }
 .custom_checkbox{
     
