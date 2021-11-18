@@ -326,6 +326,7 @@ body, html {
   padding: 20px;
   background-color: #333;
   border-radius: 10px;
+  overflow: hidden;
 }
 .main .timetable-swiper .swiper-slide__title {
   padding-bottom: 10px;
@@ -366,10 +367,20 @@ body, html {
   width: 100%;
   height: 50px;
   background-color: #333;
-  z-index: 1;
-  position: sticky;
-  bottom: 0;
-  left: 0;
+}
+.navbar__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navbar {
@@ -394,18 +405,6 @@ body, html {
 }
 .navbar__list {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 @media (min-width: 767.98px) {
   .navbar {
